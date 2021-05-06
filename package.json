@@ -1,0 +1,19 @@
+{
+  "name": "github-issues-search",
+  "version": "0.0.1",
+  "description": "a bare angularjs material template",
+  "dependencies": {
+    "angular": "^1.8.2",
+    "angular-animate": "^1.8.2",
+    "angular-aria": "^1.8.2",
+    "angular-material": "^1.2.2",
+    "angular-messages": "^1.8.2",
+    "angular-route": "^1.8.2",
+    "http-server": "^0.12.3"
+  },
+  "scripts": {
+    "start": "http-server -a localhost -p 8000"
+  },
+  "author": "",
+  "license": "ISC"
+}

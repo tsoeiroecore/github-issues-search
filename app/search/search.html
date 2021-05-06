@@ -1,0 +1,36 @@
+<md-content>
+    <md-card>
+        <md-card-title>
+            <md-card-title-text>
+                <span>Fill below: <span ng-if="$ctrl.totalIssues">{{$ctrl.totalIssues}} issue(s) found</span> </span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content layout="column">
+            <!-- md-delay option added to avoid unnecessary load on server, 
+                handle multiple requests on every keystroke by executing the search only after the user stops typing -->
+            <md-autocomplete md-no-cache="true" md-selected-item="$ctrl.selectedItem" md-search-text="$ctrl.searchText"
+                md-items="item in $ctrl.query($ctrl.searchText)" md-item-text="item.title" md-min-length="3"
+                md-delay="500" placeholder="Search issues"
+                md-selected-item-change="$event.stopPropagation();$ctrl.openIssue(item.html_url)">
+                <md-item-template>
+                    <div layout="row" ng-click="$event.stopPropagation();$ctrl.openIssue(item.html_url)">
+                        <span md-highlight-text="$ctrl.searchText" md-highlight-flags="^i">{{item.title}} </span>
+                        <md-chips ng-model="item.labels" readonly="true">
+                            <md-chip-template class="md-body-1">
+                                {{$chip.name}}
+                            </md-chip-template>
+                        </md-chips>
+                        <md-button class="md-icon-button">
+                            <md-icon>call_made</md-icon>
+                        </md-button>
+                    </div>
+                </md-item-template>
+
+                <md-not-found>
+                    No issues matching "{{$ctrl.searchText}}" were found.
+                    <a class="" ng-click="$ctrl.searchText=''"><strong><u>Try again!</u></strong></a>
+                </md-not-found>
+            </md-autocomplete>
+        </md-card-content>
+    </md-card>
+</md-content>
