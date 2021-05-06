@@ -56,6 +56,6 @@ function SearchCtrl($scope, $http, $mdToast) {
 
 angular.module("app").component("search", {
     bindings: {},
-    templateUrl: "app/search/search.html",
+    templateUrl: "src/search/search.html",
     controller: SearchCtrl
 });
