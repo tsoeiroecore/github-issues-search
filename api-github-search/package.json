@@ -1,0 +1,30 @@
+{
+  "name": "api-github-search",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "test": "DEBUG=true mocha './src/tests/**/*.js'  --exit"
+  },
+  "author": "Thiago Allessandrini Soeiro",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "compression": "^1.7.4",
+    "consign": "^0.1.6",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "memory-cache": "^0.2.0",
+    "mocha": "^5.2.0",
+    "mockgoose": "^7.3.5",
+    "mongodb": "^3.6.5",
+    "mongoose": "^5.12.2",
+    "nock": "^13.0.11",
+    "node-fetch": "^2.6.1",
+    "supertest": "^3.3.0"
+  }
+}

@@ -1,7 +1,7 @@
 {
-  "name": "github-issues-search",
+  "name": "github-search",
   "version": "0.0.1",
-  "description": "a bare angularjs material template",
+  "description": "",
   "dependencies": {
     "angular": "^1.8.2",
     "angular-animate": "^1.8.2",
@@ -14,6 +14,6 @@
   "scripts": {
     "start": "http-server -a localhost -p 8000"
   },
-  "author": "",
+  "author": "Thiago Allessandrini Soeiro",
   "license": "ISC"
 }

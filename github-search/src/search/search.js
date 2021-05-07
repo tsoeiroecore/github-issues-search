@@ -2,15 +2,7 @@ function SearchCtrl($scope, $http, $mdToast) {
     var vm = this;
 
     //TODO: use environment variables to store values below
-    
-    /* 
-    Most appropriate url would be: https://api.github.com/repos/facebook/react/issues 
-    It will show React repo issues only, but there is no keywords search filter and "total_count" response property is not available.
-    Therefore, URL below is used instead. 
-    */
-    const BACKEND_URL = 'https://api.github.com/search/issues';
-    //Accordingly to GitHub docs, for unauthenticated requests (no token), the rate limit allows for up to 60 requests per hour
-    const GITHUB_TOKEN = ''; //Optional Github personal access token
+    const BACKEND_URL = 'http://localhost:3000/issues'; //Make sure backend service is running (Check README.md file for instructions)
 
     this.$onInit = function () {
         vm.searchText = "";
@@ -20,19 +12,16 @@ function SearchCtrl($scope, $http, $mdToast) {
     vm.query = function (searchText) {
         /*  
             TODO: add API call in separate service
-            TODO: add pagination logic 
         */
         return $http({
             method: 'GET',
-            url: `${BACKEND_URL}?q=${searchText}+user:facebook+state:open&per_page=100&sort=created&order=desc`,
+            url: `${BACKEND_URL}?search=${searchText}`,
             headers: {
                 'Accept': 'application/json',
-                //TODO: uncomment below to use your Github personal access token
-                // 'Authorization': `Bearer ${GITHUB_TOKEN}`,
                 'Content-Type': 'application/json'
             }
         }).then(function (result) {
-            console.log(result.data);
+            console.log(result);
             vm.totalIssues = result.data.total_count; //total issues found
             return result.data.items;
         }).catch(function () {
