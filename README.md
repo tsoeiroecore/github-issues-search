@@ -33,9 +33,8 @@ Using Github's API (https://developer.github.com/), build an application with an
 
 ## Improvements To-do: 
 - ~~Search Github issues~~
-- Add separate service for API calls (frontend only)
-- Proposal to change autocomplete input component. Component should allow enabling pagination logic on infinite scrolling
-- Add build process for production deployment (gulp, grunt, etc..)
+- Proposal to change autocomplete input box. Component should allow enabling pagination logic on infinite scrolling
+- Add build process for production deployment (npm, webpack, gulp, grunt, etc..)
 
 ## Considerations: 
 - Added in-memory DB to simulate mongo inserts to store recent searchs

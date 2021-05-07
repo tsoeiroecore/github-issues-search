@@ -4,8 +4,7 @@ const searchService = require('../services/search')();
 
 module.exports = () => {
     const getIssues = async (searchText) => {
-        //TODO: add cache
-        //TODO: add pagination
+        //TODO: future improvements - add pagination
         try {
             //Request to GitHub API
             let url = `${constants.GITHUB_URL}/search/issues?q=${searchText}+user:facebook+state:open&per_page=100&sort=created&order=desc`;
