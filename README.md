@@ -15,7 +15,7 @@ Using Github's API (https://developer.github.com/), build an application with an
 
 ### Components:
 + Frontend: AngularJS + Angular Material
-+ Backend: Node.js + Mongoose + node-fetch + nock
++ Backend: Node.js + Mongoose + Node-fetch + Nock + Cache
 
 ### To run the backend application:
 1. Change location to project root folder path (api-github-search)
