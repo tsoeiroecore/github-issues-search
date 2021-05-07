@@ -8,7 +8,7 @@ module.exports = () => {
         //TODO: add pagination
         try {
             //Request to GitHub API
-            let url = `${constants.GITHUB_URL}?q=${searchText}+user:facebook+state:open&per_page=100&sort=created&order=desc`;
+            let url = `${constants.GITHUB_URL}/search/issues?q=${searchText}+user:facebook+state:open&per_page=100&sort=created&order=desc`;
 
             var req = await fetch(url, {
                 method: 'GET',
@@ -33,7 +33,6 @@ module.exports = () => {
             throw new Error("Something went wrong getting issues: " + err.message);
         }
     }
-
 
     function mapResponse(response) {
         return {

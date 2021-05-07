@@ -1,9 +1,9 @@
 /* 
     Most appropriate url would be: https://api.github.com/repos/facebook/react/issues 
     It will show React repo issues only, but there is no keywords search filter and "total_count" response property is not available.
-    Therefore, URL below is used instead. 
+    Therefore, URL https://api.github.com/search/issues will be used instead. 
 */
-const GITHUB_URL = process.env.GITHUB_URL || "https://api.github.com/search/issues";
+const GITHUB_URL = process.env.GITHUB_URL || "https://api.github.com";
 
 //Accordingly to GitHub docs, for unauthenticated requests (no token), the rate limit allows for up to 60 requests per hour
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN || ''; //Optional Github personal access token

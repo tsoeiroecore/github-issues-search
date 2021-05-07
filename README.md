@@ -15,12 +15,21 @@ Using Github's API (https://developer.github.com/), build an application with an
 
 ### Components:
 + Frontend: AngularJS + Angular Material
-+ Backend: Node.js + Mongoose + node-fetch
++ Backend: Node.js + Mongoose + node-fetch + nock
 
-### To run the application:
-1. Change location to project root folder path
+### To run the backend application:
+1. Change location to project root folder path (api-github-search)
 2. Run npm install
-3. Run npm start (This will serve the app onto http://localhost:8000/)
+3. Run npm start (This will serve the app onto http://localhost:3000/)
+
+### To run the frontend application:
+1. Change location to project root folder path (github-search)
+2. Run npm install
+3. Run npm start (This will serve the app onto http://localhost:8000/) PS: Make sure backend service is already running
+
+### To test the application:
+1. Change location to backend root folder path (api-github-search)
+2. Run npm test
 
 ## Improvements To-do: 
 - ~~Search Github issues~~
