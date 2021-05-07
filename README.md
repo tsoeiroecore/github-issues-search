@@ -14,7 +14,6 @@ Using Github's API (https://developer.github.com/), build an application with an
 
 
 ### To run the application:
-
 1. Change location to project root folder path
 2. Run npm install
 3. Run npm start (This will serve the app onto http://localhost:8000/)
@@ -25,6 +24,9 @@ Using Github's API (https://developer.github.com/), build an application with an
 - Add pagination logic 
 - Add tests
 - Configure application to use environment variables (Ex: To store optional Github personal access token)
-- Add build process for production deployment
+- Add build process for production deployment (gulp, grunt, etc..)
+
+## Considerations: 
+//Save to in-memory db (simulate mongo inserts to store recent searchs)
 
 

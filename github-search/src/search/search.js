@@ -2,16 +2,8 @@ function SearchCtrl($scope, $http, $mdToast) {
     var vm = this;
 
     //TODO: use environment variables to store values below
-    
-    /* 
-    Most appropriate url would be: https://api.github.com/repos/facebook/react/issues 
-    It will show React repo issues only, but there is no keywords search filter and "total_count" response property is not available.
-    Therefore, URL below is used instead. 
-    */
     const BACKEND_URL = 'https://api.github.com/search/issues';
-    //Accordingly to GitHub docs, for unauthenticated requests (no token), the rate limit allows for up to 60 requests per hour
-    const GITHUB_TOKEN = ''; //Optional Github personal access token
-
+    
     this.$onInit = function () {
         vm.searchText = "";
         vm.totalIssues = 0;
