@@ -59,7 +59,7 @@ describe('API request tests', () => {
       })
   });
 
-  it('GET: should throw an error with invalid filter', (done) => {
+  it('GET: Should throw an error with invalid filter', (done) => {
     chai.request(app).get('/issues')
       .then((res) => {
         expect(res.status).to.equal(400);
@@ -70,9 +70,8 @@ describe('API request tests', () => {
       .catch((err) => done(err));
   });
 
-
-  it('GET: should throw an error if the service is down', (done) => {
-    let searchText = 'open';
+  it('GET: Should throw an error if the service is down', (done) => {
+    let searchText = 'help';
     nock(constants.GITHUB_URL)
       .get('/search/issues')
       .query(true)
@@ -82,6 +81,22 @@ describe('API request tests', () => {
         expect(res.status).to.equal(400);
         expect(res).to.have.property('text');
         expect(res.text).to.have.string('Something went wrong getting issues');
+        done();
+      })
+      .catch((err) => done(err));
+  });
+
+  it('GET: Should sucessfully return list of issues if service down, but result is cached', (done) => {
+    let searchText = 'open';
+    nock(constants.GITHUB_URL)
+      .get('/search/issues')
+      .query(true)
+      .reply(500)
+    chai.request(app).get(`/issues?search=${searchText}`)
+      .then((res) => {
+        const body = res.body;
+        expect(res.status).to.equal(200);
+        expect(body.items > 0);
         done();
       })
       .catch((err) => done(err));
