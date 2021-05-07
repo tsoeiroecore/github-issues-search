@@ -14,6 +14,7 @@ consign({
 
 app.use(express.json());
 
+//Health checks
 app.get("/", (req,res) => {
     res.status(200).send({
         "message": "Server running"

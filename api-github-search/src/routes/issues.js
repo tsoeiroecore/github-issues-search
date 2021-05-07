@@ -3,6 +3,7 @@ var constants = require('../config/constants');
 
 module.exports = () => {
     const notifyError = (res, err, status) => {
+        //TODO: add APM tools
         console.log(err);
         res.status(status || 400).send(err.message);
     }

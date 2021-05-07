@@ -41,3 +41,10 @@ Using Github's API (https://developer.github.com/), build an application with an
 - Added caching strategy
 - Configure backend application to use environment variables - optional (Ex: To store optional Github personal access token)
 
+## Assumptions: 
+Please, consider the following:
+- For scaling purporses, projects in this solution can be containerized applications;
+- Some kind of resilience (retry logic/circuit breaker) can be used in the interaction between components. Transaction and network errors can be mitigated adding some of these strategies;
+- APM monitoring tools (Elastic, NewRelic, Dynatrace, Prometheus etc..), health checks and logging are also used for better observability. They make it easier tracking correlation between requests and checking overall operational status of services;
+- Also, to avoid any kind of latency and network issues, consider databases and all services are in the same cloud;
+- For security reasons, "api-github-search" is not exposed to the internet. It should be accessed through a gateway.
