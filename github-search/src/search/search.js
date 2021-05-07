@@ -21,7 +21,6 @@ function SearchCtrl($scope, $http, $mdToast) {
                 'Content-Type': 'application/json'
             }
         }).then(function (result) {
-            console.log(result);
             vm.totalIssues = result.data.total_count; //total issues found
             return result.data.items;
         }).catch(function () {

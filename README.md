@@ -29,7 +29,8 @@ Using Github's API (https://developer.github.com/), build an application with an
 
 ### To test the application:
 1. Change location to backend root folder path (api-github-search)
-2. Run npm test
+2. Run npm install -g mocha
+3. Run npm test
 
 ## Improvements To-do: 
 - ~~Search Github issues~~
