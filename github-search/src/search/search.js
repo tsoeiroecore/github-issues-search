@@ -2,8 +2,8 @@ function SearchCtrl($scope, $http, $mdToast) {
     var vm = this;
 
     //TODO: use environment variables to store values below
-    const BACKEND_URL = 'https://api.github.com/search/issues';
-    
+    const BACKEND_URL = 'http://localhost:3000/issues'; //Make sure backend service is running (Check README.md file for instructions)
+
     this.$onInit = function () {
         vm.searchText = "";
         vm.totalIssues = 0;
@@ -12,19 +12,16 @@ function SearchCtrl($scope, $http, $mdToast) {
     vm.query = function (searchText) {
         /*  
             TODO: add API call in separate service
-            TODO: add pagination logic 
         */
         return $http({
             method: 'GET',
-            url: `${BACKEND_URL}?q=${searchText}+user:facebook+state:open&per_page=100&sort=created&order=desc`,
+            url: `${BACKEND_URL}?search=${searchText}`,
             headers: {
                 'Accept': 'application/json',
-                //TODO: uncomment below to use your Github personal access token
-                // 'Authorization': `Bearer ${GITHUB_TOKEN}`,
                 'Content-Type': 'application/json'
             }
         }).then(function (result) {
-            console.log(result.data);
+            console.log(result);
             vm.totalIssues = result.data.total_count; //total issues found
             return result.data.items;
         }).catch(function () {
